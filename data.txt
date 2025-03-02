@@ -1,0 +1,7 @@
+Assets
+Equity
+Sales
+Profit
+Profit Margin
+Debt Ratio
+Asset Turnover

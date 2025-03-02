@@ -1,0 +1,753 @@
+###############################################################
+#                         ALPHA_FORMULA
+###############################################################
+STATUS: IN USE
+        group_zscore(equity, 'sector') + multiply(assets_curr, sales, filter=true)
+
+STATUS: YET TO USE
+        ts_mean(sales, 44)
+
+STATUS: YET TO USE
+        if_else(assets_curr < equity, equity, sales)
+
+STATUS: YET TO USE
+        if_else(assets_curr > sales, equity, sales)
+
+STATUS: YET TO USE
+        ts_corr(equity, equity, 100)
+
+STATUS: YET TO USE
+        group_neutralize(assets_curr, 'sector') * ts_arg_min(assets_curr, 184)
+
+STATUS: YET TO USE
+        add(equity, assets_curr, filter=true)
+
+STATUS: YET TO USE
+        ts_corr(assets_curr, sales, 107)
+
+STATUS: YET TO USE
+        if_else(sales == equity, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+        multiply(equity, sales, filter=false) * group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+      subtract(sales, sales, filter=false) - multiply(assets_curr, sales, filter=true)
+
+STATUS: YET TO USE
+      if_else(sales != equity, assets_curr, sales) * ts_arg_min(equity, 19)
+
+STATUS: YET TO USE
+      power(assets_curr) * ts_corr(equity, assets_curr, 176)
+
+STATUS: YET TO USE
+      subtract(sales, sales, filter=false)
+
+STATUS: YET TO USE
+      group_neutralize(assets_curr, 'sector') * if_else(equity == equity, equity, equity)
+
+STATUS: YET TO USE
+      ts_corr(sales, equity, 174)
+
+STATUS: YET TO USE
+      group_zscore(sales, 'sector') + multiply(sales, assets_curr, filter=false)
+
+STATUS: YET TO USE
+      if_else(sales != assets_curr, assets_curr, sales) - group_neutralize(equity, 'country')
+
+STATUS: YET TO USE
+      if_else(equity < equity, assets_curr, equity) * power(equity)
+
+STATUS: YET TO USE
+      if_else(assets_curr == equity, equity, assets_curr)
+
+STATUS: YET TO USE
+  ts_corr(equity, assets_curr, 90) * ts_arg_min(assets_curr, 31)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector')
+
+STATUS: YET TO USE
+  ts_mean(sales, 148) + if_else(equity < equity, sales, equity)
+
+STATUS: YET TO USE
+  multiply(assets_curr, sales, filter=false) + group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+  if_else(sales < assets_curr, sales, assets_curr)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  if_else(assets_curr != sales, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+  if_else(sales < assets_curr, assets_curr, assets_curr) * if_else(sales > assets_curr, assets_curr, sales)
+
+STATUS: YET TO USE
+  if_else(sales > equity, assets_curr, sales)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector')
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'industry') - if_else(equity > equity, sales, sales)
+
+STATUS: YET TO USE
+  group_zscore(sales, 'industry')
+
+STATUS: YET TO USE
+  add(assets_curr, equity, filter=false) * ts_corr(equity, assets_curr, 98)
+
+STATUS: YET TO USE
+  ts_corr(equity, assets_curr, 32) + group_zscore(sales, 'sector')
+
+STATUS: YET TO USE
+  add(sales, assets_curr, filter=false) + ts_mean(equity, 113)
+
+STATUS: YET TO USE
+  add(equity, sales, filter=false) - subtract(assets_curr, sales, filter=true)
+
+STATUS: YET TO USE
+  ts_corr(sales, assets_curr, 201) * multiply(sales, sales, filter=false)
+
+STATUS: YET TO USE
+  subtract(equity, sales, filter=false)
+
+STATUS: YET TO USE
+  multiply(sales, equity, filter=false)
+
+STATUS: YET TO USE
+  if_else(equity < assets_curr, equity, assets_curr)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 250)
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'sector') + group_neutralize(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 94)
+
+STATUS: YET TO USE
+  ts_mean(sales, 125)
+
+STATUS: YET TO USE
+  ts_corr(sales, sales, 212) * group_zscore(sales, 'sector')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 55) * power(sales)
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  subtract(sales, equity, filter=false)
+
+STATUS: YET TO USE
+  ts_arg_min(sales, 15) * group_neutralize(assets_curr, 'country')
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector') + add(equity, assets_curr, filter=true)
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 54) * power(sales)
+
+STATUS: YET TO USE
+  power(sales) - group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+  group_zscore(sales, 'country') + ts_mean(sales, 90)
+
+STATUS: YET TO USE
+  add(equity, sales, filter=false)
+
+STATUS: YET TO USE
+  if_else(sales != equity, sales, assets_curr) * group_zscore(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  if_else(assets_curr != assets_curr, equity, sales) + ts_arg_min(sales, 95)
+
+STATUS: YET TO USE
+  add(assets_curr, sales, filter=false)
+
+STATUS: YET TO USE
+  if_else(sales == assets_curr, sales, assets_curr) - if_else(equity < equity, sales, equity)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'sector') * subtract(sales, sales, filter=false)
+
+STATUS: YET TO USE
+  subtract(assets_curr, equity, filter=false)
+
+STATUS: YET TO USE
+  ts_arg_min(assets_curr, 176)
+
+STATUS: YET TO USE
+  add(equity, assets_curr, filter=false) + group_neutralize(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'country')
+
+STATUS: YET TO USE
+  group_zscore(sales, 'sector')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 5) + multiply(equity, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  ts_corr(sales, equity, 59) * if_else(assets_curr > equity, sales, assets_curr)
+
+STATUS: YET TO USE
+  multiply(sales, equity, filter=false) - if_else(sales < sales, assets_curr, equity)
+
+STATUS: YET TO USE
+  ts_corr(sales, equity, 220) * ts_mean(assets_curr, 187)
+
+STATUS: YET TO USE
+  multiply(assets_curr, equity, filter=false) - group_neutralize(equity, 'sector')
+
+STATUS: YET TO USE
+  if_else(sales != equity, sales, equity) - multiply(sales, assets_curr, filter=true)
+
+STATUS: YET TO USE
+  multiply(assets_curr, equity, filter=true) * ts_arg_min(equity, 63)
+
+STATUS: YET TO USE
+  ts_mean(sales, 65) + if_else(equity < sales, assets_curr, equity)
+
+STATUS: YET TO USE
+  ts_corr(assets_curr, sales, 150) + ts_corr(assets_curr, equity, 85)
+
+STATUS: YET TO USE
+  add(assets_curr, assets_curr, filter=false) * if_else(equity != sales, sales, sales)
+
+STATUS: YET TO USE
+  ts_corr(equity, sales, 17) - if_else(assets_curr != assets_curr, equity, assets_curr)
+
+STATUS: YET TO USE
+  power(sales) - ts_mean(assets_curr, 219)
+
+STATUS: YET TO USE
+  ts_corr(equity, sales, 210) + group_neutralize(sales, 'sector')
+
+STATUS: YET TO USE
+  add(equity, assets_curr, filter=true) + if_else(equity == equity, equity, assets_curr)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector') + ts_mean(sales, 6)
+
+STATUS: YET TO USE
+  subtract(assets_curr, assets_curr, filter=true)
+
+STATUS: YET TO USE
+  ts_mean(sales, 201)
+
+STATUS: YET TO USE
+  ts_corr(equity, sales, 132) * if_else(assets_curr > equity, sales, assets_curr)
+
+STATUS: YET TO USE
+  add(sales, sales, filter=false)
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  if_else(sales != equity, equity, assets_curr)
+
+STATUS: YET TO USE
+  power(assets_curr)
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 127) - subtract(sales, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  if_else(sales != equity, equity, sales)
+
+STATUS: YET TO USE
+  if_else(sales != sales, equity, assets_curr)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'industry') * group_zscore(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  subtract(equity, equity, filter=true) + if_else(assets_curr == equity, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+  add(sales, sales, filter=true) + add(sales, sales, filter=false)
+
+STATUS: YET TO USE
+  ts_corr(sales, assets_curr, 151)
+
+STATUS: YET TO USE
+  group_neutralize(sales, 'country')
+
+STATUS: YET TO USE
+  add(sales, sales, filter=false)
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 75) + group_neutralize(sales, 'industry')
+
+STATUS: YET TO USE
+  if_else(equity > sales, equity, sales)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'industry')
+
+STATUS: YET TO USE
+  group_zscore(equity, 'industry') + ts_mean(equity, 187)
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 184) * ts_mean(equity, 45)
+
+STATUS: YET TO USE
+  ts_arg_min(assets_curr, 242)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'country') * ts_corr(assets_curr, assets_curr, 126)
+
+STATUS: YET TO USE
+  ts_mean(equity, 219) - group_neutralize(sales, 'sector')
+
+STATUS: YET TO USE
+  if_else(assets_curr != assets_curr, sales, sales) + add(equity, equity, filter=false)
+
+STATUS: YET TO USE
+  ts_corr(sales, equity, 110) * if_else(equity > sales, equity, equity)
+
+STATUS: YET TO USE
+  if_else(assets_curr != assets_curr, equity, sales) * if_else(assets_curr != assets_curr, equity, equity)
+
+STATUS: YET TO USE
+  ts_corr(equity, assets_curr, 5) * add(sales, equity, filter=true)
+
+STATUS: YET TO USE
+  ts_arg_min(sales, 93)
+
+STATUS: YET TO USE
+  multiply(sales, equity, filter=false)
+
+STATUS: YET TO USE
+  if_else(equity == sales, sales, equity)
+
+STATUS: YET TO USE
+  group_zscore(sales, 'country')
+
+STATUS: YET TO USE
+  power(sales) + ts_arg_min(equity, 93)
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 226) - power(equity)
+
+STATUS: YET TO USE
+  subtract(assets_curr, equity, filter=true) * if_else(sales > equity, sales, assets_curr)
+
+STATUS: YET TO USE
+  if_else(equity != sales, assets_curr, equity) * group_neutralize(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  ts_corr(equity, assets_curr, 242) - group_zscore(sales, 'sector')
+
+STATUS: YET TO USE
+  if_else(assets_curr < equity, equity, equity) + add(equity, equity, filter=false)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector') - ts_corr(sales, equity, 239)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector')
+
+STATUS: YET TO USE
+  add(assets_curr, sales, filter=false) * ts_mean(equity, 232)
+
+STATUS: YET TO USE
+  ts_corr(equity, equity, 179) * ts_corr(sales, equity, 34)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'sector')
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 150)
+
+STATUS: YET TO USE
+  ts_mean(equity, 203) + group_neutralize(sales, 'industry')
+
+STATUS: YET TO USE
+  add(sales, sales, filter=false)
+
+STATUS: YET TO USE
+  ts_mean(sales, 174) - if_else(equity == sales, sales, assets_curr)
+
+STATUS: YET TO USE
+  multiply(equity, assets_curr, filter=true)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+  ts_corr(assets_curr, sales, 108) - group_neutralize(equity, 'country')
+
+STATUS: YET TO USE
+  ts_mean(sales, 82) - group_zscore(sales, 'country')
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 54)
+
+STATUS: YET TO USE
+  if_else(equity != sales, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+  if_else(assets_curr > assets_curr, equity, equity)
+
+STATUS: YET TO USE
+  ts_mean(sales, 54)
+
+STATUS: YET TO USE
+  add(equity, equity, filter=false)
+
+STATUS: YET TO USE
+  group_zscore(sales, 'country') - group_neutralize(sales, 'sector')
+
+STATUS: YET TO USE
+  group_zscore(sales, 'industry') + if_else(sales != sales, equity, equity)
+
+STATUS: YET TO USE
+  if_else(sales < equity, assets_curr, sales)
+
+STATUS: YET TO USE
+  if_else(equity > sales, assets_curr, sales) * group_zscore(sales, 'sector')
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 11)
+
+STATUS: YET TO USE
+  ts_mean(sales, 236) + multiply(equity, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 103)
+
+STATUS: YET TO USE
+  add(sales, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  if_else(assets_curr == equity, assets_curr, equity)
+
+STATUS: YET TO USE
+  multiply(equity, sales, filter=true) - ts_mean(assets_curr, 179)
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'country') * ts_corr(sales, assets_curr, 69)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  subtract(equity, assets_curr, filter=false) - add(assets_curr, sales, filter=false)
+
+STATUS: YET TO USE
+  ts_mean(equity, 120)
+
+STATUS: YET TO USE
+  ts_arg_min(sales, 181) - if_else(assets_curr > equity, equity, equity)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  if_else(sales != equity, equity, equity)
+
+STATUS: YET TO USE
+  group_zscore(sales, 'country')
+
+STATUS: YET TO USE
+  group_neutralize(sales, 'industry') * multiply(equity, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  ts_corr(sales, assets_curr, 185)
+
+STATUS: YET TO USE
+  multiply(sales, sales, filter=false) + group_neutralize(sales, 'industry')
+
+STATUS: YET TO USE
+  group_zscore(equity, 'industry')
+
+STATUS: YET TO USE
+  ts_corr(equity, equity, 104)
+
+STATUS: YET TO USE
+  subtract(sales, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'sector')
+
+STATUS: YET TO USE
+  group_neutralize(sales, 'country') * if_else(assets_curr != assets_curr, sales, assets_curr)
+
+STATUS: YET TO USE
+  subtract(sales, equity, filter=true) + if_else(equity == assets_curr, equity, equity)
+
+STATUS: YET TO USE
+  group_zscore(sales, 'industry') - group_zscore(sales, 'industry')
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'sector') + add(sales, assets_curr, filter=true)
+
+STATUS: YET TO USE
+  add(assets_curr, sales, filter=false)
+
+STATUS: YET TO USE
+  power(equity) - subtract(equity, sales, filter=true)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'industry') * group_neutralize(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  multiply(equity, sales, filter=false) - ts_arg_min(sales, 124)
+
+STATUS: YET TO USE
+  multiply(sales, equity, filter=true)
+
+STATUS: YET TO USE
+  ts_corr(sales, equity, 61) - group_zscore(equity, 'industry')
+
+STATUS: YET TO USE
+  multiply(equity, sales, filter=true)
+
+STATUS: YET TO USE
+  add(equity, equity, filter=false)
+
+STATUS: YET TO USE
+  if_else(equity != assets_curr, sales, sales) + if_else(assets_curr > sales, equity, equity)
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 227)
+
+STATUS: YET TO USE
+  multiply(assets_curr, sales, filter=false) * ts_corr(assets_curr, sales, 184)
+
+STATUS: YET TO USE
+  if_else(assets_curr != equity, equity, assets_curr) * group_zscore(equity, 'sector')
+
+STATUS: YET TO USE
+  subtract(assets_curr, equity, filter=true)
+
+STATUS: YET TO USE
+  add(assets_curr, assets_curr, filter=true) * if_else(assets_curr != equity, equity, equity)
+
+STATUS: YET TO USE
+  ts_arg_min(assets_curr, 226) - power(sales)
+
+STATUS: YET TO USE
+  if_else(equity != assets_curr, sales, equity) - if_else(equity < equity, sales, assets_curr)
+
+STATUS: YET TO USE
+  if_else(sales < equity, equity, equity) + group_neutralize(equity, 'country')
+
+STATUS: YET TO USE
+  if_else(sales == equity, sales, assets_curr) - group_neutralize(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  ts_corr(assets_curr, sales, 131) + ts_corr(assets_curr, sales, 133)
+
+STATUS: YET TO USE
+  group_neutralize(assets_curr, 'country')
+
+STATUS: YET TO USE
+  multiply(equity, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'sector') - group_zscore(sales, 'country')
+
+STATUS: YET TO USE
+  if_else(equity < equity, equity, assets_curr) * if_else(sales == equity, equity, assets_curr)
+
+STATUS: YET TO USE
+  if_else(assets_curr == assets_curr, sales, equity)
+
+STATUS: YET TO USE
+  multiply(equity, sales, filter=true)
+
+STATUS: YET TO USE
+  if_else(assets_curr == sales, equity, assets_curr)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'industry') + ts_mean(sales, 35)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  add(equity, equity, filter=false)
+
+STATUS: YET TO USE
+  if_else(assets_curr == assets_curr, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+  subtract(equity, sales, filter=true) + if_else(equity < sales, sales, sales)
+
+STATUS: YET TO USE
+  if_else(sales < assets_curr, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'sector') - group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'country')
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'country')
+
+STATUS: YET TO USE
+  add(equity, assets_curr, filter=false) - group_neutralize(equity, 'industry')
+
+STATUS: YET TO USE
+  add(sales, sales, filter=true) * if_else(sales < sales, assets_curr, sales)
+
+STATUS: YET TO USE
+  subtract(sales, sales, filter=true)
+
+STATUS: YET TO USE
+  ts_mean(sales, 60) + group_zscore(assets_curr, 'sector')
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'sector') * subtract(assets_curr, equity, filter=true)
+
+STATUS: YET TO USE
+  multiply(sales, assets_curr, filter=true) + if_else(sales > sales, sales, sales)
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 110)
+
+STATUS: YET TO USE
+  group_zscore(assets_curr, 'country') - if_else(assets_curr < assets_curr, sales, equity)
+
+STATUS: YET TO USE
+  add(assets_curr, sales, filter=true) + if_else(equity < equity, equity, assets_curr)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector') - power(equity)
+
+STATUS: YET TO USE
+  ts_arg_min(assets_curr, 189)
+
+STATUS: YET TO USE
+  ts_corr(sales, equity, 46)
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 141) + group_zscore(sales, 'country')
+
+STATUS: YET TO USE
+  if_else(equity != equity, sales, assets_curr)
+
+STATUS: YET TO USE
+  add(assets_curr, sales, filter=true) * group_zscore(sales, 'country')
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 214)
+
+STATUS: YET TO USE
+  ts_corr(sales, sales, 118)
+
+STATUS: YET TO USE
+  add(sales, assets_curr, filter=true)
+
+STATUS: YET TO USE
+  if_else(assets_curr == sales, assets_curr, assets_curr) + add(equity, assets_curr, filter=false)
+
+STATUS: YET TO USE
+  subtract(equity, sales, filter=true) * group_zscore(equity, 'industry')
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 229)
+
+STATUS: YET TO USE
+  if_else(equity == sales, assets_curr, assets_curr)
+
+STATUS: YET TO USE
+  if_else(sales > assets_curr, equity, equity) + if_else(assets_curr > assets_curr, equity, equity)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'sector')
+
+STATUS: YET TO USE
+  subtract(equity, equity, filter=true)
+
+STATUS: YET TO USE
+  subtract(equity, sales, filter=true)
+
+STATUS: YET TO USE
+  multiply(equity, sales, filter=true) * group_neutralize(assets_curr, 'country')
+
+STATUS: YET TO USE
+  group_neutralize(sales, 'country')
+
+STATUS: YET TO USE
+  if_else(equity == assets_curr, equity, assets_curr) * ts_arg_min(assets_curr, 136)
+
+STATUS: YET TO USE
+  subtract(equity, sales, filter=false) - power(sales)
+
+STATUS: YET TO USE
+  if_else(equity > equity, equity, equity)
+
+STATUS: YET TO USE
+  multiply(sales, sales, filter=false) - power(sales)
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'country')
+
+STATUS: YET TO USE
+  group_zscore(sales, 'sector') * group_zscore(equity, 'country')
+
+STATUS: YET TO USE
+  ts_corr(equity, sales, 129) * add(equity, equity, filter=false)
+
+STATUS: YET TO USE
+  add(equity, assets_curr, filter=true) - group_neutralize(equity, 'country')
+
+STATUS: YET TO USE
+  ts_mean(equity, 190) * ts_mean(sales, 107)
+
+STATUS: YET TO USE
+  group_zscore(sales, 'industry')
+
+STATUS: YET TO USE
+  ts_mean(assets_curr, 86) - if_else(sales < equity, assets_curr, sales)
+
+STATUS: YET TO USE
+  group_neutralize(sales, 'country')
+
+STATUS: YET TO USE
+  if_else(sales == equity, assets_curr, equity)
+
+STATUS: YET TO USE
+  ts_arg_min(equity, 84)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'industry') - if_else(sales == equity, equity, assets_curr)
+
+STATUS: YET TO USE
+  group_zscore(equity, 'sector')
+
+STATUS: YET TO USE
+  if_else(assets_curr != assets_curr, sales, equity) - ts_corr(sales, equity, 116)
+
+STATUS: YET TO USE
+  add(sales, equity, filter=false) - group_neutralize(assets_curr, 'industry')
+
+STATUS: YET TO USE
+  group_neutralize(equity, 'sector')
+
+STATUS: YET TO USE
+  if_else(equity == sales, sales, assets_curr)
+

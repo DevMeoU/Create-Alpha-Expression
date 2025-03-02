@@ -1,0 +1,502 @@
+
+=== Kết quả cho A ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AA ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AACT ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AADI ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AAL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho AAM ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho AAME ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AAMI ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho AAOI ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AAON ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AAP ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AAPL ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AARD ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AB ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABAT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho ABBV ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABCB ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABCL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABEO ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABG ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABLV ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABM ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABNB ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABOS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABP ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABSI ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABTS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABUS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ABVC ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho ABVE ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AC ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACA ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACAD ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACCD ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACCO ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACCS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACDC ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACEL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACET ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACGL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACHC ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACHR ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACHV ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho ACI ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACIC ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACIU ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACIW ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACLS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACLX ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACM ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Không có dữ liệu cho AECOM ===
+
+=== Kết quả cho ACMR ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACN ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACNB ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho ACNT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACOG ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACON ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACRS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: KHÔNG ĐẠT
+
+=== Kết quả cho ACRV ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACTG ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACTU ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACU ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACVA ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ACXP ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADBE ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADCT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADD ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADEA ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADGM ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADI ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADIL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADM ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADMA ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADN ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADNT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADP ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADPT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADSE ===
+- Sharpe >= 1.25: ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADSK ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADTN ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADTX ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADUS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADV ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho ADVM ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEE ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEHL ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEHR ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEI ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEIS ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEMD ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AENT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEO ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEON ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AEP ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AER ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AERT ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT
+
+=== Kết quả cho AES ===
+- Sharpe >= 1.25: KHÔNG ĐẠT
+- Drawdown <= 5%: KHÔNG ĐẠT
+- Turnover 1%-70%: ĐẠT

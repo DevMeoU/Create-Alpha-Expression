@@ -1,0 +1,6 @@
+Best Formula: (winsorize(ts_arg_min(High, 46), std=3)) * 0.99
+Validation Score: 0.63
+Passed Criteria:
+- Sharpe >= 1.25
+- Drawdown <= 5%
+- Turnover 1%-70%
