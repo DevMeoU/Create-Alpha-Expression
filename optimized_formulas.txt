@@ -1,5 +1,5 @@
-Best Formula: (winsorize(ts_arg_min(High, 46), std=3)) * 0.99
-Validation Score: 0.63
+Best Formula: winsorize((ts_arg_min(vw, 46)) * 0.87, std=3)
+Validation Score: 0.65
 Passed Criteria:
 - Sharpe >= 1.25
 - Drawdown <= 5%

@@ -2,7 +2,7 @@ import random
 import numpy as np
 import pandas as pd
 
-# ======================== Cấu hình hàm và tham số =========================
+# ======================== Cấu hình tham số cho các hàm ========================
 FUNCTION_PARAMS = {
     # Arithmetic functions
     "abs": {
@@ -75,6 +75,7 @@ FUNCTION_PARAMS = {
     },
     "if_else": {
         "args": 3,
+        "conditions": ["<", ">", "==", "!="],
         "description": "Nếu input1 đúng thì trả về input2, ngược lại trả về input3."
     },
     "is_nan": {
@@ -279,76 +280,134 @@ FUNCTION_PARAMS = {
 
 # ======================== Hàm sinh tham số ========================
 def generate_arguments(func_name, columns):
-    """Sinh tham số phù hợp cho từng hàm"""
+    """Sinh tham số phù hợp cho từng hàm dựa trên FUNCTION_PARAMS."""
     params = FUNCTION_PARAMS.get(func_name, {})
     
-    # Xử lý hàm có số tham số cố định
-    if func_name in ["add", "subtract", "multiply", "divide"]:
+    # Xử lý số lượng đối số nếu 'args' được định nghĩa dưới dạng chuỗi (ví dụ ">=2")
+    if isinstance(params.get("args"), str) and params["args"].startswith(">="):
+        min_args = int(params["args"][2:])
+        num_args = min_args  # có thể điều chỉnh thêm nếu muốn sinh thêm đối số
+    else:
+        num_args = params.get("args", 1)
+    
+    # --- Arithmetic functions có filter_param ---
+    if params.get("filter_param", False) and func_name in ["add", "subtract", "multiply"]:
+        # Sinh ra 2 cột và thêm tham số filter
         args = [random.choice(columns) for _ in range(2)]
-        if params.get("filter_param"):
-            args.append(f"filter={random.choice(['true', 'false'])}")
+        args.append(f"filter={random.choice(['true', 'false'])}")
         return args
     
-    # Xử lý hàm time series
+    # --- Time Series functions ---
     elif func_name.startswith("ts_"):
-        col = random.choice(columns)
-        window = random.randint(*params.get("window_range", (5, 252)))
-        if func_name == "ts_corr":
-            return [col, random.choice(columns), window]
-        return [col, window]
+        # Xử lý riêng cho ts_regression vì yêu cầu 4 đối số
+        if func_name == "ts_regression":
+            window = random.randint(5, 252)
+            return [random.choice(columns), random.choice(columns), window, 0]  # sử dụng lag=0 theo mặc định
+        else:
+            col = random.choice(columns)
+            if "window_range" in params:
+                window = random.randint(*params["window_range"])
+                if func_name == "ts_corr":
+                    # ts_corr yêu cầu 3 đối số: (x, y, d)
+                    return [col, random.choice(columns), window]
+                return [col, window]
+            else:
+                return [col]
     
-    # Xử lý hàm if_else
+    # --- Logical functions ---
+    elif func_name in ["and", "or"]:
+        return [random.choice(columns) for _ in range(2)]
+    elif func_name in ["not", "is_nan"]:
+        return [random.choice(columns)]
     elif func_name == "if_else":
-        condition = f"{random.choice(columns)} {random.choice(params['conditions'])} {random.choice(columns)}"
+        conditions = params.get("conditions", ["<", ">", "==", "!="])
+        condition = f"{random.choice(columns)} {random.choice(conditions)} {random.choice(columns)}"
         return [condition, random.choice(columns), random.choice(columns)]
     
-    # Xử lý hàm group
+    # --- Cross Sectional and Vector functions ---
+    # Các hàm này nhận 1 đối số
+    elif func_name in ["normalize", "quantile", "rank", "scale", "winsorize", "zscore", "vec_avg", "vec_sum"]:
+        return [random.choice(columns)]
+    
+    # --- Transformational functions ---
+    elif func_name == "bucket":
+        return [random.choice(columns)]
+    elif func_name == "trade_when":
+        # Cần 3 đối số
+        return [random.choice(columns) for _ in range(3)]
+    
+    # --- Group functions ---
     elif func_name.startswith("group_"):
-        return [random.choice(columns), f"'{random.choice(params['groups'])}'"]
+        # Với group_mean và group_backfill cần 3 đối số: (x, weight, group)
+        if func_name in ["group_mean", "group_backfill"]:
+            groups = FUNCTION_PARAMS.get(func_name, {}).get("default", {}).get("group")
+            if groups is None:
+                groups = ["sector", "industry", "country"]
+            return [random.choice(columns), random.choice(columns), f"'{random.choice(groups)}'"]
+        else:
+            # Các hàm group khác (group_neutralize, group_rank, group_zscore) yêu cầu 2 đối số: (x, group)
+            groups = FUNCTION_PARAMS.get(func_name, {}).get("default", {}).get("group")
+            if groups is None:
+                groups = ["sector", "industry", "country"]
+            return [random.choice(columns), f"'{random.choice(groups)}'"]
     
-    # Mặc định: 1 tham số
-    return [random.choice(columns)]
+    # --- Default: nếu không thuộc các trường hợp đặc biệt, sinh num_args đối số từ columns ---
+    else:
+        return [random.choice(columns) for _ in range(num_args)]
 
-# ======================== Hàm sinh công thức ========================
+# ======================== Hàm sinh lệnh gọi hàm ========================
 def generate_function_call(func_name, columns):
-    """Tạo lệnh gọi hàm với cú pháp chính xác"""
+    """Tạo lệnh gọi hàm với cú pháp chính xác dựa trên các tham số sinh ra."""
     args = generate_arguments(func_name, columns)
-    
-    # Định dạng tham số
     formatted_args = []
     for arg in args:
-        if isinstance(arg, str) and "'" in arg:  # Xử lý chuỗi
+        if isinstance(arg, str):
             formatted_args.append(arg)
         else:
             formatted_args.append(str(arg))
-    
     return f"{func_name}({', '.join(formatted_args)})"
 
+# ======================== Hàm sinh công thức ngẫu nhiên ========================
 def generate_random_formula(columns, max_depth=2):
-    """Sinh công thức với độ phức tạp có kiểm soát"""
+    """
+    Sinh công thức alpha ngẫu nhiên với độ phức tạp kiểm soát dựa trên FUNCTION_PARAMS.
+    
+    Parameters:
+      - columns: danh sách tên cột có sẵn (ví dụ: ['assets_curr', 'equity', 'sales'])
+      - max_depth: độ sâu của công thức (cho phép kết hợp với toán tử)
+      
+    Trả về:
+      - Một chuỗi biểu thức đại diện cho công thức alpha.
+    """
+    # Định nghĩa ánh xạ nhóm hàm (category) với danh sách tên hàm theo FUNCTION_PARAMS
+    categories = {
+        "Arithmetic": ["abs", "add", "densify", "divide", "inverse", "log", "max", "min", "multiply", "power", "reverse", "sign", "signed_power", "subtract"],
+        "Logical": ["and", "if_else", "is_nan", "not", "or"],
+        "TimeSeries": ["days_from_last_change", "hump", "kth_element", "last_diff_value", "ts_arg_max", "ts_arg_min", "ts_av_diff", "ts_backfill",
+                       "ts_corr", "ts_count_nans", "ts_covariance", "ts_decay_linear", "ts_delay", "ts_delta", "ts_mean", "ts_product",
+                       "ts_quantile", "ts_rank", "ts_regression", "ts_scale", "ts_std_dev", "ts_step", "ts_sum", "ts_zscore"],
+        "CrossSectional": ["normalize", "quantile", "rank", "scale", "winsorize", "zscore"],
+        "Vector": ["vec_avg", "vec_sum"],
+        "Transformational": ["bucket", "trade_when"],
+        "Group": ["group_backfill", "group_mean", "group_neutralize", "group_rank", "group_zscore"]
+    }
+    
+    # Nếu độ sâu đã hết, chỉ trả về một cột ngẫu nhiên
     if max_depth <= 0:
         return random.choice(columns)
     
-    # Chọn loại hàm
-    func_type = random.choice(["arithmetic", "timeseries", "logical", "group"])
+    # Chọn ngẫu nhiên một nhóm hàm
+    chosen_category = random.choice(list(categories.keys()))
+    # Chọn ngẫu nhiên một hàm từ nhóm đó
+    func = random.choice(categories[chosen_category])
     
-    # Sinh biểu thức
-    if func_type == "arithmetic":
-        func = random.choice(["add", "subtract", "multiply", "power"])
-        expr = generate_function_call(func, columns)
-    elif func_type == "timeseries":
-        func = random.choice(["ts_arg_min", "ts_mean", "ts_corr"])
-        expr = generate_function_call(func, columns)
-    elif func_type == "logical":
-        expr = generate_function_call("if_else", columns)
-    else:
-        func = random.choice(["group_neutralize", "group_zscore"])
-        expr = generate_function_call(func, columns)
+    # Sinh lệnh gọi hàm (function call) dựa trên tên hàm đã chọn và danh sách columns
+    expr = generate_function_call(func, columns)
     
-    # Thêm toán tử kết hợp
+    # Với một xác suất (ví dụ 50%) và nếu độ sâu > 1, kết hợp biểu thức với toán tử và công thức con
     if random.random() < 0.5 and max_depth > 1:
         operator = random.choice(["+", "-", "*"])
-        return f"{expr} {operator} {generate_random_formula(columns, max_depth-1)}"
+        return f"{expr} {operator} {generate_random_formula(columns, max_depth - 1)}"
     
     return expr
 
@@ -357,11 +416,11 @@ if __name__ == "__main__":
     columns = ['assets_curr', 'equity', 'sales']
     output = []
     
-    # Sinh 20 công thức
+    # Sinh 100 công thức
     for _ in range(100):
-        formula = generate_random_formula(columns)
+        formula = generate_random_formula(columns, max_depth=random.randint(0, 4))
         output.append(formula)
-
+    
     # Ghi vào file
     with open("alpha_formulas.txt", "a+") as f:
         for expr in output:
@@ -369,11 +428,3 @@ if __name__ == "__main__":
             f.write(f"  {expr}\n\n")
 
     print("___ DONE ___")
-# Kết quả mẫu:
-"""
-ts_arg_min(assets_curr, 189) * 0.75
-group_zscore('equity', 'sector') - ts_mean(sales, 42)
-if_else(assets_curr < equity, ts_corr(sales, equity, 120), power(assets_curr, 2)) 
-add(equity, sales, filter=true) * 1.2
-ts_arg_max(sales, 75) + group_neutralize('assets_curr', 'industry')
-"""

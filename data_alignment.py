@@ -9,35 +9,67 @@ TARGET_CRITERIA = {
     "Turnover 1%-70%": True
 }
 
-# ======================== ĐỊNH NGHĨA HÀM HỖ TRỢ ========================
-def ts_corr(x, y, d):
-    """Tính rolling correlation giữa 2 chuỗi với cửa sổ d ngày."""
-    return x.rolling(window=d).corr(y)
+class AlphaEngine:
+    def __init__(self, data: pd.DataFrame, groups: Dict[str, pd.Series]):
+        self.data = data
+        self.groups = groups
+    # ======================== ĐỊNH NGHĨA HÀM HỖ TRỢ ========================
 
-def ts_arg_min(x, d):
-    """
-    Trả về series với giá trị 1 nếu giá trị cuối của cửa sổ rolling bằng giá trị nhỏ nhất trong cửa sổ, 0 còn lại.
-    Đây là một cách để tạo tín hiệu từ chuỗi.
-    """
-    return x.rolling(window=d).apply(lambda s: 1 if s.iloc[-1] == s.min() else 0, raw=False)
+    # ==================== Arithmetic Functions ====================
+    def abs(self, x: pd.Series) -> pd.Series:
+        return x.abs()
 
-def group_zscore(x, group):
-    """Tính z-score của chuỗi x. Ở đây bỏ qua tham số group."""
-    return (x - x.mean()) / x.std()
+    def log(self, x: pd.Series) -> pd.Series:
+        return np.log(x)
 
-def scale(x, scale=0.9):
-    """Nhân chuỗi x với hệ số scale."""
-    return x * scale
+    # ==================== Time Series Functions ====================
+    def ts_delay(self, x: pd.Series, window: int) -> pd.Series:
+        return x.shift(window)
 
-def winsorize(x, std=3):
-    """Winsorize chuỗi x bằng cách cắt bớt giá trị ngoài khoảng [mean - std*std, mean + std*std]."""
-    mean_val = x.mean()
-    std_val = x.std()
-    lower = mean_val - std * std_val
-    upper = mean_val + std * std_val
-    return x.clip(lower, upper)
+    def ts_quantile(self, x: pd.Series, window: int, driver: str = 'gaussian') -> pd.Series:
+        ranks = x.rolling(window).rank(pct=True)
+        if driver == 'gaussian':
+            return norm.ppf(ranks)
+        elif driver == 'uniform':
+            return ranks * 2 - 1
+        else:
+            raise ValueError(f"Driver {driver} không được hỗ trợ")
+
+    # ==================== Group Functions ====================
+    def group_backfill(self, x: pd.Series, group: str, window: int) -> pd.Series:
+        def _backfill(g):
+            return g.fillna(g.rolling(window).mean())
+        return x.groupby(self.groups[group]).transform(_backfill)
+
+    def ts_corr(x, y, d):
+        """Tính rolling correlation giữa 2 chuỗi với cửa sổ d ngày."""
+        return x.rolling(window=d).corr(y)
+
+    def ts_arg_min(x, d):
+        """
+        Trả về series với giá trị 1 nếu giá trị cuối của cửa sổ rolling bằng giá trị nhỏ nhất trong cửa sổ, 0 còn lại.
+        Đây là một cách để tạo tín hiệu từ chuỗi.
+        """
+        return x.rolling(window=d).apply(lambda s: 1 if s.iloc[-1] == s.min() else 0, raw=False)
+
+    def group_zscore(x, group):
+        """Tính z-score của chuỗi x. Ở đây bỏ qua tham số group."""
+        return (x - x.mean()) / x.std()
+
+    def scale(x, scale=0.9):
+        """Nhân chuỗi x với hệ số scale."""
+        return x * scale
+
+    def winsorize(x, std=3):
+        """Winsorize chuỗi x bằng cách cắt bớt giá trị ngoài khoảng [mean - std*std, mean + std*std]."""
+        mean_val = x.mean()
+        std_val = x.std()
+        lower = mean_val - std * std_val
+        upper = mean_val + std * std_val
+        return x.clip(lower, upper)
 
 # ======================== HÀM TÍNH HIỆU SUẤT CÔNG THỨC ========================
+
 def calculate_formula_performance(formula, data):
     """
     Đánh giá hiệu suất của công thức bằng cách:
@@ -47,11 +79,15 @@ def calculate_formula_performance(formula, data):
     """
     # Xây dựng context cho eval(): bao gồm các hàm và các cột dữ liệu
     context = {
-        'ts_corr': ts_corr,
-        'ts_arg_min': ts_arg_min,
-        'group_zscore': group_zscore,
-        'scale': scale,
-        'winsorize': winsorize,
+        'ts_decay_linear': AlphaEngine.ts_decay_linear,
+        'group_backfill': AlphaEngine.group_backfill,
+        'ts_quantile': AlphaEngine.ts_quantile,
+        'if_else': AlphaEngine.if_else,
+        'ts_corr': AlphaEngine.ts_corr,
+        'ts_arg_min': AlphaEngine.ts_arg_min,
+        'group_zscore': AlphaEngine.group_zscore,
+        'scale': AlphaEngine.scale,
+        'winsorize': AlphaEngine.winsorize,
         'np': np,
         'pd': pd,
         'random': random
@@ -107,25 +143,39 @@ def check_criteria(sharpe, drawdown, turnover):
 
 # ======================== HÀM SINH CÔNG THỨC ========================
 def generate_optimized_formula(columns):
-    """Sinh công thức ngẫu nhiên với cấu trúc tối ưu dựa trên các cột của dữ liệu."""
-    base_ops = [
-        lambda: f"rank({random.choice(columns)}, {random.choice(columns)}, {random.randint(30, 180)})",
-        lambda: f"ts_corr({random.choice(columns)}, {random.choice(columns)}, {random.randint(30, 180)})",
-        lambda: f"ts_arg_min({random.choice(columns)}, {random.randint(20, 60)})",
-        lambda: f"group_zscore({random.choice(columns)}, '{random.choice(['sector','industry'])}')"
-    ]
+    func_categories = {
+        'Arithmetic': ['add', 'multiply', 'signed_power'],
+        'TimeSeries': ['ts_decay_linear', 'ts_quantile', 'ts_regression'],
+        'Group': ['group_backfill', 'group_neutralize'],
+        'Logical': ['if_else', 'and']
+    }
     
-    modifiers = [
-        lambda x: f"scale({x}, scale=0.9)",
-        lambda x: f"winsorize({x}, std=3)",
-        lambda x: f"({x}) * {random.uniform(0.8, 1.2):.2f}"
-    ]
+    category = random.choice(list(func_categories.keys()))
+    func_name = random.choice(func_categories[category])
     
-    formula = random.choice(base_ops)()
-    for _ in range(random.randint(0, 2)):
-        formula = random.choice(modifiers)(formula)
-        
-    return formula
+    # Sinh tham số dựa trên FUNCTION_PARAMS
+    params = []
+    param_config = FUNCTION_PARAMS[category][func_name].get("args", 1)
+    
+    # Xử lý số lượng tham số
+    if isinstance(param_config, str) and param_config.startswith(">="):
+        min_args = int(param_config[2:])
+        num_args = random.randint(min_args, min_args + 2)
+    else:
+        num_args = param_config
+    
+    for _ in range(num_args):
+        if random.random() < 0.7:
+            params.append(random.choice(columns))
+        else:
+            params.append(str(random.uniform(0.5, 2.0)))
+    
+    # Thêm tham số mặc định
+    if 'default' in FUNCTION_PARAMS[category][func_name]:
+        for k, v in FUNCTION_PARAMS[category][func_name]['default'].items():
+            params.append(f"{k}={v}")
+    
+    return f"{func_name}({', '.join(params)})"
 
 def evaluate_formula(formula_func, data, max_trials=100):
     """Sinh và đánh giá nhiều công thức cho đến khi đạt tiêu chí, trả về công thức tốt nhất và điểm số của nó."""
@@ -154,6 +204,12 @@ if __name__ == "__main__":
     # Ở đây, chúng ta dùng cột 't' làm index
     data = pd.read_excel("AAPL_stock_data.xlsx", parse_dates=["t"], index_col="t")
     
+    engine = AlphaEngine(data, groups={'sector': data['sector']})
+    
+    formula = "ts_quantile(Close, 30) * group_backfill(Volume, 'sector', 20)"
+    sharpe, drawdown, turnover = calculate_formula_performance(formula, data)
+    print(f"Sharpe: {sharpe:.2f}, Drawdown: {drawdown:.2f}%, Turnover: {turnover:.2f}")
+
     best_formula, best_score = evaluate_formula(
         generate_optimized_formula,
         data,
